@@ -1,29 +1,31 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:Examen_Mvvm.ViewModels"
+             x:DataType="viewmodel:MainViewModels"
              x:Class="Examen_Mvvm.Views.MainView"
              Title="MainView">
-    <VerticalStackLayout>
+    <VerticalStackLayout Margin="10" Spacing="10">
         <Label Text="Producto 1: "></Label>
-        <Entry Text="{Binding A}" Keyboard="Numeric"></Entry>
+        <Entry Text="{Binding Producto1}" Keyboard="Numeric"></Entry>
 
 
         <Label Text="Producto 2: "></Label>
-        <Entry Text="{Binding B}" Keyboard="Numeric"></Entry>
+        <Entry Text="{Binding Producto2}" Keyboard="Numeric"></Entry>
         
         <Label Text="Producto 3: "></Label>
-        <Entry Text="{Binding B}" Keyboard="Numeric"></Entry>
+        <Entry Text="{Binding Producto3}" Keyboard="Numeric"></Entry>
 
         <Label Text="Subtotal: "></Label>
-        <Entry Text="{Binding C}" IsReadOnly="True" ></Entry>
+        <Entry Text="{Binding Suma}" IsReadOnly="True" ></Entry>
         
         <Label Text="Descuento: "></Label>
-        <Entry Text="{Binding C}" IsReadOnly="True" ></Entry>
+        <Entry Text="{Binding Descuento}" IsReadOnly="True" ></Entry>
         
         <Label Text="Total a Pagar: "></Label>
-        <Entry Text="{Binding C}" IsReadOnly="True" ></Entry>
+        <Entry Text="{Binding Total}" IsReadOnly="True" ></Entry>
 
-        <Button Text="Calcular" Background="Green" Command="{Binding SumarCommand}"></Button>
+        <Button Text="Calcular" Background="Green" Command="{Binding CalcularCommand}"></Button>
         <Button Text="Limpiar" Background="Red" Command="{Binding LimpiarCommand}"></Button>
 
     </VerticalStackLayout>
