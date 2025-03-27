@@ -4,9 +4,27 @@
              x:Class="Examen_Mvvm.Views.MainView"
              Title="MainView">
     <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+        <Label Text="Producto 1: "></Label>
+        <Entry Text="{Binding A}" Keyboard="Numeric"></Entry>
+
+
+        <Label Text="Producto 2: "></Label>
+        <Entry Text="{Binding B}" Keyboard="Numeric"></Entry>
+        
+        <Label Text="Producto 3: "></Label>
+        <Entry Text="{Binding B}" Keyboard="Numeric"></Entry>
+
+        <Label Text="Subtotal: "></Label>
+        <Entry Text="{Binding C}" IsReadOnly="True" ></Entry>
+        
+        <Label Text="Descuento: "></Label>
+        <Entry Text="{Binding C}" IsReadOnly="True" ></Entry>
+        
+        <Label Text="Total a Pagar: "></Label>
+        <Entry Text="{Binding C}" IsReadOnly="True" ></Entry>
+
+        <Button Text="Calcular" Background="Green" Command="{Binding SumarCommand}"></Button>
+        <Button Text="Limpiar" Background="Red" Command="{Binding LimpiarCommand}"></Button>
+
     </VerticalStackLayout>
 </ContentPage>
