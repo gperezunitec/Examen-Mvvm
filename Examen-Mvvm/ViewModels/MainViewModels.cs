@@ -26,26 +26,45 @@ public partial class MainViewModels:ObservableObject
     [RelayCommand]
     private void Calcular()
     {
-       Suma= producto1 + producto2 + producto3;
 
-       if (Suma>10000)
-       {
-           Descuento = Suma * 0.3;
-       }
-       else if (Suma>5000)
-       {
-           Descuento = Suma * 0.2;
-       }
-       else if (Suma>1000)
-       {
-           Descuento = Suma * 0.1;
-       }
-       else
-       {
-           Descuento = 0;
-       }
 
-       Total = Suma - Descuento;
+
+
+        try
+        {
+
+            Suma= producto1 + producto2 + producto3;
+
+            if (Suma>10000)
+            {
+                Descuento = Suma * 0.3;
+            }
+            else if (Suma>5000)
+            {
+                Descuento = Suma * 0.2;
+            }
+            else if (Suma>1000)
+            {
+                Descuento = Suma * 0.1;
+            }
+            else
+            {
+                Descuento = 0;
+            }
+
+            Total = Suma - Descuento;
+            
+            
+            
+        }
+        catch (Exception ex)
+        {
+            Alerta("ERROR",ex.Message);
+            throw;
+        }
+        
+        
+       
     }
     
     [RelayCommand]
